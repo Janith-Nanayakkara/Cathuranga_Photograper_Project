@@ -6,7 +6,142 @@
 body{
     margin: 0;
     font-family: 'poppins',sans-serif;
-  
+}
+
+/* <================= Navbar =================> */
+#navbar{
+    height: 7rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+#navbar.fixed{
+    position: fixed;
+    height: 5rem;
+    background-color: #131416;
+    transition: all 0.3s ease-in-out;
+}
+#navbar .logo{
+    width: 5rem;
+    margin-left: 5rem;
+    z-index: 5;
+}
+#navbar .logo img{
+    width: 100%;
+}
+#navbar .nav-items{
+    display: flex;
+    list-style: none;
+    margin-right: 5rem;
+}
+#navbar .nav-items li{
+    margin: 0 1rem;
+}
+#navbar .nav-items li a{
+    text-decoration: none;
+    color: #c1c1c1;
+    font-size: 17px;
+    cursor: pointer;
+}
+#navbar .nav-items li a:hover{
+    color: white;
+}
+
+/* <================= Home =================> */
+#home{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+#home .text-holder{
+    z-index: 2;
+}
+#home .text-holder h1{
+    font-weight: 300;
+}
+#home .text-holder h1 span{
+    font-size: 90px;
+    color: var(--main-color);
+}
+#home .text-holder h3{
+    font-weight: 300;
+}
+#home .text-holder h3 span{
+    font-size: 34px;
+    color: var(--main-color);
+}
+#home .text-holder .button{
+    display: block;
+    text-align: center;
+}
+#home .hero-img{
+    width: 30rem;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    right: 3rem;
+    bottom: -5px;
+    pointer-events: none;
+    opacity: 0.6;
+}
+#home .hero-img img{
+    width: 100%;
+}
+#home .social-icons{
+    position: absolute;
+    bottom: 1rem;
+    z-index: 2;
+    right: 5rem;
+}
+#home .social-icons a{
+    text-decoration: none;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    line-height: 35px;
+    margin-right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s ease-in-out;
+    cursor: pointer;
+}
+#home .social-icons a i{
+    color: #1c1d24;
+}
+#home .social-icons a:hover{
+    transform: translateY(-10%);
+    background-color: var(--main-color);
+}
+#home .social-icons a:hover i{
+    color: white;
+}
+#home .scroll-txt{
+    position: absolute;
+    left: 5rem;
+    bottom: 2rem;
+    text-transform: uppercase;
+}
+#home .scroll-txt a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    transition: letter-spacing 0.5s ease;
+    text-align: left;
+}
+#home .scroll-txt a:hover{
+    letter-spacing: 2px;
+    color: var(--main-color);
 }
 .about{
     height: 100vh;
@@ -274,4 +409,69 @@ body{
     max-width: 100%;
   }
   }
+  /* Media Queries */
+@media (max-width: 950px) {
+    #navbar .nav-items{
+        position: fixed;
+        flex-direction: column;
+        gap: 20px;
+        top: 0;
+        left: -100%;
+        background-color: #131416;
+        width: 300px;
+        height: 100%;
+        padding-top: 8rem;
+        padding-left: 2rem;
+        transition: all 0.5s ease-in-out;
+    }
+    input[type="checkbox"]:checked ~ .nav-items{
+        left: 0% !important;
+    }
+    #navbar .checkbox{
+        display: block;
+    }
+    .hamburger-lines{
+        display: flex;
+    }
+    #navbar .logo{
+        margin-left: 1.5rem;
+    }
+}
+@media (max-width: 850px){
+    #navbar .checkbox{
+        right: 2.5rem;
+    }
+    #home .text-holder{
+        text-align: center;
+    }
+    #home .text-holder h1,
+    #home .text-holder h1 span{
+        font-size: 45px;
+    }
+    #home .text-holder h3,
+    #home .text-holder h3 span{
+        font-size: 20px;
+    }
+    #home .scroll-txt{
+        display: none;
+    }
+    #home .social-icons{
+        width: 100%;
+        text-align: center;
+        right: 0;
+    }
+    .container{
+        padding: 0 80px;
+    }
+}
+@media (max-width: 600px){
+    .container{
+        padding: 0 20px;
+    }
+    #home .hero-img{
+        display: none;
+    }
+}
+
+
   
