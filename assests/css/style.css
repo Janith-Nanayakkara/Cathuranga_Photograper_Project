@@ -58,7 +58,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color:white;
 }
 #home .text-holder{
     z-index: 2;
